@@ -118,7 +118,7 @@ button, select {
 }
 
 button, html input[type=button], input[type=reset], input[type=submit] {
-  -webkit-appearance: button;
+  /* -webkit-appearance: button; */
   cursor: pointer;
 }
 
@@ -145,7 +145,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 input[type=search] {
-  -webkit-appearance: textfield;
+  /* -webkit-appearance: textfield; */
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
