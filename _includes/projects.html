@@ -1,12 +1,11 @@
 <section>
   <div class="project-container">
-    <!-- Welcome message -->
-    <div class="welcome-message">
-      <h2>Welcome to My Projects</h2>
-      <p>Here are some of the projects I've worked on.</p>
-    </div>
-    <!-- Project units -->
-    {% for project in site.data.settings.projects %}
+    {% if include.featured %}
+      {% assign projects = site.data.settings.featured_projects %}
+    {% else %}
+      {% assign projects = site.data.settings.projects %}
+    {% endif %}
+    {% for project in projects %}
       <a class="project-link" href="{{ site.github.url }}/projects/{{ project.url }}">
         <div class="project-unit project-unit-{{ forloop.index }}" data-project="{{ project.name }}">
           <div class="project-overlay">

@@ -331,7 +331,7 @@ h3 {
   --page-background: #fff;
   --page-text: #666;
   --heading-text: #333;
-  --section-background: #e5eaee;
+  /* --section-background: #e5eaee; */
   --muted-border: #ddd;
   --control-text: rgba(0, 0, 0, 1);
 }
@@ -341,7 +341,7 @@ h3 {
     --page-background: #121419;
     --page-text: #c5c8cf;
     --heading-text: #f0f1f3;
-    --section-background: #1d222b;
+    /* --section-background: #1d222b; */
     --muted-border: #3a404b;
     --control-text: rgba(255, 255, 255, 0.92);
   }

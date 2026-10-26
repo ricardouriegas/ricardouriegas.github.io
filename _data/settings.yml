@@ -2,13 +2,16 @@
 # General Site Settings
 
 menu:
-- {name: 'Projects', url: ''}
+- {name: 'Projects', url: 'projects'}
 - {name: 'Blog',     url: 'blog'}
 - {name: 'About',    url: 'about'}
 - {name: 'Contact',  url: 'contact'}
 
 #-------------------------------
 # Projects Section
+
+# Add project URLs here when you want them featured on the home page.
+featured_projects: []
 
 projects:
 - {name: 'SQL Interpreter, IDE and Modeler from Scratch',   url: 'proj-1'}
