@@ -1,27 +1,31 @@
 @use '../variables' as *
 
 footer
-  height: 200px
+  min-height: 10rem
+  padding: 2rem 0
   .footer-wrap
-    max-width: 500px
-    margin: 0px auto 0px
-    padding: 10px
+    max-width: 31.25rem
+    margin: 0 auto
+    padding: 0 1rem
     .footer-tagline
       text-align: center
       color: var(--control-text)
       font:
-        size: 24px
+        size: clamp(1.125rem, 2vw, 1.5rem)
         weight: 700
     .social-media
       text-align: center
       nav
-        margin: 0px
-        padding: 0px
+        margin: 0
+        padding: 0
+        display: flex
+        justify-content: center
+        gap: 1.25rem
         a
-          margin: 10px
+          margin: 0
           color: var(--control-text)
           font:
-            size: 20px
+            size: clamp(1rem, 2vw, 1.25rem)
             weight: 700
           &:hover
             color: $accent-color

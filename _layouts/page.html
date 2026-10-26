@@ -3,7 +3,17 @@ layout: default
 ---
 
 <section>
-  <div class="page-content">
+  <div class="page-layout{% if page.title == 'About' %} page-layout--about{% endif %}">
+    <div class="page-content">
     {{ content }}
+    </div>
+    {% if page.title == "About" %}
+      <div class="page-logo">
+        <picture>
+          <source srcset="{{ site.github.url }}/assets/svg/logo-white.svg" media="(prefers-color-scheme: dark)">
+          <img src="{{ site.github.url }}/assets/svg/logo-black.svg" alt="Ricardo Uriegas logo">
+        </picture>
+      </div>
+    {% endif %}
   </div>
 </section>

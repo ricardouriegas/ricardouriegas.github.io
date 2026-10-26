@@ -22,6 +22,9 @@
     --muted-border: #3a404b
     --control-text: rgba(255, 255, 255, 0.92)
 
+*, *::before, *::after
+  box-sizing: border-box
+
 /*	Typography presets
   ------------------------------------	*/
 
@@ -31,35 +34,35 @@ h1, h2, h3, h4, h5, h6
   font-weight: bold
 
 .gigantic
-  font-size: 110px
+  font-size: clamp(3.5rem, 10vw, 6.875rem)
   line-height: 1.09
   letter-spacing: -2px
 
 .huge, h1
-  font-size: 68px
+  font-size: clamp(2.25rem, 7vw, 4.25rem)
   line-height: 1.05
   letter-spacing: -1px
 
 .large, h2
-  font-size: 42px
+  font-size: clamp(1.75rem, 5vw, 2.625rem)
   line-height: 1.14
 
 .bigger, h3
-  font-size: 26px
+  font-size: clamp(1.25rem, 3vw, 1.625rem)
   line-height: 1.38
 
 .big, h4
-  font-size: 22px
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem)
   line-height: 1.38
 
 .small, small
-  font-size: 10px
+  font-size: 0.625rem
   line-height: 1.2
 
 
 
 p
-  margin: 0 0 20px 0
+  margin: 0 0 1.25rem
 
 em
   font-style: italic
@@ -71,7 +74,7 @@ hr
   border: solid var(--muted-border)
   border-width: 1px 0 0
   clear: both
-  margin: 10px 0 30px
+  margin: 0.625rem 0 1.875rem
   height: 0
 
 
@@ -101,7 +104,7 @@ pre, code, blockquote, input, textarea, select, button
   ------------------------------------	*/
 body
   background: var(--page-background)
-  font-size: 14px
+  font-size: 1rem
   line-height: 1.6
   font-family: 'Open Sans', sans-serif
   color: var(--page-text)
@@ -115,7 +118,7 @@ h3
   @extend %small-bold
   color: $accent-light
   text-align: center
-  padding: 100px 0 30px
+  padding: clamp(3rem, 10vw, 6.25rem) 0 1.875rem
 
 fieldset
   padding: 0
@@ -128,7 +131,7 @@ fieldset
 
 section:nth-child(odd)
   background: var(--section-background)
-  padding-bottom: 100px
+  padding-bottom: clamp(3rem, 8vw, 6.25rem)
 
   h3
     color: color.adjust($accent-light, $lightness: -10%)

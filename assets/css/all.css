@@ -118,7 +118,7 @@ button, select {
 }
 
 button, html input[type=button], input[type=reset], input[type=submit] {
-  /* -webkit-appearance: button; */
+  -webkit-appearance: button;
   cursor: pointer;
 }
 
@@ -145,7 +145,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 input[type=search] {
-  /* -webkit-appearance: textfield; */
+  -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
@@ -346,6 +346,10 @@ h3 {
     --control-text: rgba(255, 255, 255, 0.92);
   }
 }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /*	Typography presets
  * ------------------------------------	*/
 .gigantic, .huge, .large, .bigger, .big,
@@ -355,39 +359,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gigantic {
-  font-size: 110px;
+  font-size: clamp(3.5rem, 10vw, 6.875rem);
   line-height: 1.09;
   letter-spacing: -2px;
 }
 
 .huge, h1 {
-  font-size: 68px;
+  font-size: clamp(2.25rem, 7vw, 4.25rem);
   line-height: 1.05;
   letter-spacing: -1px;
 }
 
 .large, h2 {
-  font-size: 42px;
+  font-size: clamp(1.75rem, 5vw, 2.625rem);
   line-height: 1.14;
 }
 
 .bigger, h3 {
-  font-size: 26px;
+  font-size: clamp(1.25rem, 3vw, 1.625rem);
   line-height: 1.38;
 }
 
 .big, h4 {
-  font-size: 22px;
+  font-size: clamp(1.125rem, 2.5vw, 1.375rem);
   line-height: 1.38;
 }
 
 .small, small {
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 1.2;
 }
 
 p {
-  margin: 0 0 20px 0;
+  margin: 0 0 1.25rem;
 }
 
 em {
@@ -402,7 +406,7 @@ hr {
   border: solid var(--muted-border);
   border-width: 1px 0 0;
   clear: both;
-  margin: 10px 0 30px;
+  margin: 0.625rem 0 1.875rem;
   height: 0;
 }
 
@@ -433,7 +437,7 @@ pre, code, blockquote, input, textarea, select, button {
  * ------------------------------------	*/
 body {
   background: var(--page-background);
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.6;
   font-family: "Open Sans", sans-serif;
   color: var(--page-text);
@@ -449,7 +453,7 @@ svg {
 h3 {
   color: rgb(88.2878914027%, 76.1192732831%, 52.1434811463%);
   text-align: center;
-  padding: 100px 0 30px;
+  padding: clamp(3rem, 10vw, 6.25rem) 0 1.875rem;
 }
 
 fieldset {
@@ -465,19 +469,23 @@ fieldset {
 }
 section:nth-child(odd) {
   background: var(--section-background);
-  padding-bottom: 100px;
+  padding-bottom: clamp(3rem, 8vw, 6.25rem);
 }
 section:nth-child(odd) h3 {
   color: rgb(84.3555837104%, 68.1013861036%, 36.0757888386%);
 }
 
 header {
-  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  padding: clamp(1rem, 3vw, 2rem) 0;
 }
 header .logo {
-  float: left;
-  margin: 30px;
-  font-size: 24px;
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 700;
 }
 header .logo a {
@@ -488,14 +496,17 @@ header .logo a:hover {
   color: #BD5248;
 }
 header nav {
-  float: right;
-  margin: 30px 30px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
 }
 header nav a {
   display: inline-block;
-  margin-left: 20px;
+  margin: 0;
   color: var(--control-text);
-  font-size: 24px;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 700;
 }
 header nav a:hover {
@@ -503,45 +514,42 @@ header nav a:hover {
 }
 
 @media (max-width: 768px) {
-  header .logo {
-    margin: 10px 30px 0px 0px;
-  }
   header nav {
-    margin: 0px;
-    margin-top: 18px;
-    float: left;
+    justify-content: flex-start;
   }
   header nav a {
-    margin-left: 0px;
-    margin-right: 20px;
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 footer {
-  height: 200px;
+  min-height: 10rem;
+  padding: 2rem 0;
 }
 footer .footer-wrap {
-  max-width: 500px;
-  margin: 0px auto 0px;
-  padding: 10px;
+  max-width: 31.25rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 footer .footer-wrap .footer-tagline {
   text-align: center;
   color: var(--control-text);
-  font-size: 24px;
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
   font-weight: 700;
 }
 footer .footer-wrap .social-media {
   text-align: center;
 }
 footer .footer-wrap .social-media nav {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
 }
 footer .footer-wrap .social-media nav a {
-  margin: 10px;
+  margin: 0;
   color: var(--control-text);
-  font-size: 20px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: 700;
 }
 footer .footer-wrap .social-media nav a:hover {
@@ -549,9 +557,10 @@ footer .footer-wrap .social-media nav a:hover {
 }
 
 .project-container {
-  max-width: 750px;
-  margin: 0px auto 0px;
-  padding: 30px;
+  width: 100%;
+  max-width: 56.25rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2rem);
 }
 .project-container::after {
   clear: both;
@@ -572,9 +581,11 @@ footer .footer-wrap .social-media nav a:hover {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
   display: block;
-  width: 600px;
-  height: 300px;
-  margin: 0px auto 30px;
+  width: 100%;
+  max-width: 37.5rem;
+  aspect-ratio: 2/1;
+  height: auto;
+  margin: 0 auto 2rem;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -624,11 +635,11 @@ footer .footer-wrap .social-media nav a:hover {
 }
 .project-container .project-unit .project-overlay strong {
   display: block;
-  padding: 20px;
+  padding: clamp(1rem, 4vw, 1.5rem);
   color: var(--project-text);
-  max-width: 85%;
+  max-width: 90%;
   line-height: 1.2;
-  font-size: 24px;
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
   font-weight: 300;
 }
 .project-container .project-unit:hover {
@@ -657,12 +668,8 @@ footer .footer-wrap .social-media nav a:hover {
   }
 }
 @media (max-width: 768px) {
-  .project-container {
-    max-width: 80vw;
-  }
   .project-container .project-unit {
-    width: 80vw;
-    height: 40vw;
+    aspect-ratio: 5/3;
   }
 }
 @keyframes project-drift {
@@ -696,23 +703,20 @@ body {
 }
 
 .site-container {
-  width: 750px;
-  margin: auto;
+  width: calc(100% - 2rem);
+  max-width: 1100px;
+  margin-inline: auto;
 }
 
-@media (max-width: 768px) {
-  .site-container {
-    width: 95vw;
-  }
-}
 .page-content {
-  width: 450px;
-  margin: 30px;
+  width: auto;
+  max-width: 45rem;
+  margin: clamp(1rem, 4vw, 2rem);
 }
 .page-content h1 {
   line-height: 1.5;
   color: var(--heading-text);
-  font-size: 30px;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   font-weight: 700;
 }
 .page-content p {
@@ -720,14 +724,42 @@ body {
   font-size: 16px;
 }
 
+.page-layout--about {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 5vw, 4rem);
+}
+.page-layout--about .page-content {
+  flex: 1 1 28rem;
+  max-width: 45rem;
+}
+
+.page-logo {
+  flex: 0 1 18rem;
+  margin: clamp(1rem, 4vw, 2rem) 0;
+  text-align: center;
+}
+.page-logo img {
+  display: inline-block;
+  width: min(100%, 11.25rem);
+  max-width: 100%;
+}
+
 @media (max-width: 768px) {
+  .page-layout--about {
+    display: block;
+  }
+  .page-layout--about .page-logo {
+    display: none;
+  }
   .page-content {
     width: 80vw;
   }
 }
 .post-container {
-  max-width: 600px;
-  margin: 0px auto 30px;
+  width: 100%;
+  max-width: 37.5rem;
+  margin: 0 auto 2rem;
   position: relative;
   display: block;
 }
@@ -736,10 +768,11 @@ body {
   line-height: 1.2;
   margin-bottom: 10px;
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
 }
 .post-container img {
   max-width: 100%;
+  height: auto;
 }
 .post-container a:hover img {
   opacity: 0.78;
@@ -747,7 +780,7 @@ body {
 }
 .post-container .post-return {
   cursor: pointer;
-  font-size: 24px;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   position: absolute;
   top: -3px;
   left: -35px;
@@ -756,15 +789,22 @@ body {
   text-align: center;
 }
 
+@media (max-width: 700px) {
+  .post-container .post-return {
+    position: static;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+}
 .blog-container {
   padding-top: 10px;
-  margin: 30px;
+  margin: clamp(1rem, 4vw, 2rem);
 }
 .blog-container .blog-unit h1 {
   display: inline-block;
   margin-bottom: 5px;
   padding: 0px;
-  font-size: 24px;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 700;
 }
 .blog-container .blog-unit h1 a {
@@ -815,7 +855,7 @@ body {
 }
 .image-container .text {
   color: black;
-  font-size: 24px;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 700;
   position: absolute;
   top: 50%;
@@ -832,5 +872,3 @@ body {
     transform: none;
   }
 }
-
-/*# sourceMappingURL=all.css.map */
