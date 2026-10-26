@@ -3,12 +3,30 @@
 @use '../1-tools/-tools-dir' as *
 @use 'placeholders' as *
 
+:root
+  color-scheme: light dark
+  --page-background: #fff
+  --page-text: #666
+  --heading-text: #333
+  --section-background: #e5eaee
+  --muted-border: #ddd
+  --control-text: rgba(0, 0, 0, 1)
+
+@media (prefers-color-scheme: dark)
+  :root
+    --page-background: #121419
+    --page-text: #c5c8cf
+    --heading-text: #f0f1f3
+    --section-background: #1d222b
+    --muted-border: #3a404b
+    --control-text: rgba(255, 255, 255, 0.92)
+
 /*	Typography presets
   ------------------------------------	*/
 
 .gigantic, .huge, .large, .bigger, .big,
 h1, h2, h3, h4, h5, h6
-  color: $headlineColor
+  color: var(--heading-text)
   font-weight: bold
 
 .gigantic
@@ -49,7 +67,7 @@ strong
   font-weight: bold
 
 hr
-  border: solid #ddd
+  border: solid var(--muted-border)
   border-width: 1px 0 0
   clear: both
   margin: 10px 0 30px
@@ -92,11 +110,11 @@ body
 /* Basic Styles
   ------------------------------------	*/
 body
-  background: $documentBackgroundColor
+  background: var(--page-background)
   font-size: 14px
   line-height: 1.6
   font-family: 'Open Sans', sans-serif
-  color: $textColor
+  color: var(--page-text)
   -webkit-font-smoothing: antialiased
   -webkit-text-size-adjust: 100%
 
@@ -119,7 +137,7 @@ fieldset
     padding: 50px 0 50px
 
 section:nth-child(odd)
-  background: $bgcolor
+  background: var(--section-background)
   padding-bottom: 100px
 
   h3
