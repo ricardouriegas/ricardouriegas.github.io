@@ -1,3 +1,8 @@
+@use 'sass:color'
+@use '../variables' as *
+@use '../1-tools/-tools-dir' as *
+@use 'placeholders' as *
+
 /*	Typography presets
   ------------------------------------	*/
 
@@ -60,7 +65,7 @@ a
   outline: 0
 
 a:hover, a:focus
-  color: lighten($accent, 20%)
+  color: color.adjust($accent, $lightness: 20%)
 
 
 
@@ -118,4 +123,4 @@ section:nth-child(odd)
   padding-bottom: 100px
 
   h3
-    color: darken($accent-light, 10%)
+    color: color.adjust($accent-light, $lightness: -10%)

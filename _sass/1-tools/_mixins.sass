@@ -1,0 +1,36 @@
+@use 'sass:list'
+
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+
+@mixin position($position, $args)
+  position: $position
+  top: list.nth($args, 1)
+  right: list.nth($args, 2)
+  bottom: list.nth($args, 3)
+  left: list.nth($args, 4)
+
+@mixin clearfix
+  &::after
+    clear: both
+    content: ''
+    display: table
+
+@mixin display($value)
+  display: $value
+
+@mixin align-items($value)
+  align-items: $value
+
+@mixin justify-content($value)
+  justify-content: $value
+
+@mixin transition($args: all 0.3s ease-in-out)
+  transition: $args
+
+@mixin transform($value)
+  transform: $value
+
+@mixin transform-origin($value)
+  transform-origin: $value

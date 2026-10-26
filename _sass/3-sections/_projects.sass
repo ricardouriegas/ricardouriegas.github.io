@@ -1,3 +1,7 @@
+@use 'sass:color'
+@use '../variables' as *
+@use '../1-tools/-tools-dir' as *
+
 .project-container
   max-width: 750px
   margin: 0px auto 0px
@@ -19,7 +23,7 @@
     .project-overlay
       +position(absolute, 100% 0px null 0px)
       height: 100%
-      background: fade-out(#333, 0.5)
+      background: color.adjust(#333, $alpha: -0.5)
       text-align: center
       //+transition
       +display(flex)
