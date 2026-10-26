@@ -5,6 +5,7 @@
 
 :root
   color-scheme: light dark
+  --corner-radius: 12px
   --page-background: #fff
   --page-text: #666
   --heading-text: #333
@@ -89,28 +90,12 @@ a:hover, a:focus
 
 
 
-/* Selection colors (easy to forget)
-  ------------------------------------	*/
-
-::selection
-  background: $selectionColor
-
-::-moz-selection
-  background: $selectionColor
-
-img::selection
-  background: transparent
-
-img::-moz-selection
-  background: transparent
-
 img
+  border-radius: var(--corner-radius)
   transition: opacity 280ms ease, transform 280ms ease
 
-body
-  -webkit-tap-highlight-color: $selectionColor
-
-
+pre, code, blockquote, input, textarea, select, button
+  border-radius: var(--corner-radius)
 
 /* Basic Styles
   ------------------------------------	*/

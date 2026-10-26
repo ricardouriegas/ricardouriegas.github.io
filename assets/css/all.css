@@ -327,6 +327,7 @@ h3 {
 
 :root {
   color-scheme: light dark;
+  --corner-radius: 12px;
   --page-background: #fff;
   --page-text: #666;
   --heading-text: #333;
@@ -419,30 +420,13 @@ a:hover, a:focus {
   opacity: 0.82;
 }
 
-/* Selection colors (easy to forget)
- * ------------------------------------	*/
-::selection {
-  background: rgb(94.4004524887%, 88.4898190045%, 84.0309200603%);
-}
-
-::-moz-selection {
-  background: rgb(94.4004524887%, 88.4898190045%, 84.0309200603%);
-}
-
-img::selection {
-  background: transparent;
-}
-
-img::-moz-selection {
-  background: transparent;
-}
-
 img {
+  border-radius: var(--corner-radius);
   transition: opacity 280ms ease, transform 280ms ease;
 }
 
-body {
-  -webkit-tap-highlight-color: rgb(94.4004524887%, 88.4898190045%, 84.0309200603%);
+pre, code, blockquote, input, textarea, select, button {
+  border-radius: var(--corner-radius);
 }
 
 /* Basic Styles
@@ -569,13 +553,13 @@ footer .footer-wrap .social-media nav a:hover {
   margin: 0px auto 0px;
   padding: 30px;
 }
-.project-container .project-link:hover {
-  opacity: 1;
-}
 .project-container::after {
   clear: both;
   content: "";
   display: table;
+}
+.project-container .project-link:hover {
+  opacity: 1;
 }
 .project-container .project-unit {
   --project-accent: #a85f54;
@@ -584,6 +568,7 @@ footer .footer-wrap .social-media nav a:hover {
   --project-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.72));
   --project-text: #25272b;
   background: var(--project-background);
+  border-radius: var(--corner-radius);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   cursor: pointer;
   display: block;
@@ -795,6 +780,8 @@ body {
 }
 
 .image-container {
+  border-radius: var(--corner-radius);
+  overflow: hidden;
   position: relative;
   width: 100%;
   margin-bottom: 20px;
@@ -806,6 +793,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: var(--corner-radius);
   transform: scale(1);
   transition: opacity 280ms ease, transform 280ms ease;
 }
@@ -822,11 +810,11 @@ body {
   height: 100%;
   width: 100%;
   opacity: 0;
-  background-color: rgba(255, 255, 255, 0.05);
   transition: opacity 280ms ease;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 .image-container .text {
-  color: var(--heading-text);
+  color: black;
   font-size: 24px;
   font-weight: 700;
   position: absolute;

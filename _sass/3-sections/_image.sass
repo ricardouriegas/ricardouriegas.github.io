@@ -1,6 +1,8 @@
 @use '../variables' as *
 
 .image-container
+  border-radius: var(--corner-radius)
+  overflow: hidden
   position: relative
   width: 100%
   margin-bottom: 20px
@@ -10,6 +12,7 @@
     display: block
     width: 100%
     height: auto
+    border-radius: var(--corner-radius)
     transform: scale(1)
     transition: opacity 280ms ease, transform 280ms ease
   &:hover .image
