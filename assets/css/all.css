@@ -411,10 +411,12 @@ a {
   color: #c99065;
   text-decoration: none;
   outline: 0;
+  transition: color 220ms ease, opacity 220ms ease;
 }
 
 a:hover, a:focus {
   color: rgb(89.2081447964%, 77.8167420814%, 69.2232277526%);
+  opacity: 0.82;
 }
 
 /* Selection colors (easy to forget)
@@ -433,6 +435,10 @@ img::selection {
 
 img::-moz-selection {
   background: transparent;
+}
+
+img {
+  transition: opacity 280ms ease, transform 280ms ease;
 }
 
 body {
@@ -562,6 +568,9 @@ footer .footer-wrap .social-media nav a:hover {
   max-width: 750px;
   margin: 0px auto 0px;
   padding: 30px;
+}
+.project-container .project-link:hover {
+  opacity: 1;
 }
 .project-container::after {
   clear: both;
@@ -717,7 +726,7 @@ body {
 }
 .page-content h1 {
   line-height: 1.5;
-  color: black;
+  color: var(--heading-text);
   font-size: 30px;
   font-weight: 700;
 }
@@ -738,7 +747,7 @@ body {
   display: block;
 }
 .post-container h4 {
-  color: black;
+  color: var(--heading-text);
   line-height: 1.2;
   margin-bottom: 10px;
   font-weight: 700;
@@ -748,7 +757,8 @@ body {
   max-width: 100%;
 }
 .post-container a:hover img {
-  opacity: 0.5;
+  opacity: 0.78;
+  transform: scale(1.02);
 }
 .post-container .post-return {
   cursor: pointer;
@@ -773,7 +783,7 @@ body {
   font-weight: 700;
 }
 .blog-container .blog-unit h1 a {
-  color: black;
+  color: var(--heading-text);
 }
 .blog-container .blog-unit h1:hover a {
   color: #BD5248;
@@ -796,6 +806,12 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  transform: scale(1);
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+.image-container:hover .image {
+  opacity: 0.9;
+  transform: scale(1.02);
 }
 .image-container .overlay {
   position: absolute;
@@ -807,9 +823,10 @@ body {
   width: 100%;
   opacity: 0;
   background-color: rgba(255, 255, 255, 0.05);
+  transition: opacity 280ms ease;
 }
 .image-container .text {
-  color: black;
+  color: var(--heading-text);
   font-size: 24px;
   font-weight: 700;
   position: absolute;
@@ -817,6 +834,15 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  img, .image-container .image, .image-container .overlay {
+    transition: none;
+  }
+  .post-container a:hover img, .image-container:hover .image {
+    transform: none;
+  }
 }
 
 /*# sourceMappingURL=all.css.map */

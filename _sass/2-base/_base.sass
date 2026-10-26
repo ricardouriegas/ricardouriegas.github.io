@@ -81,9 +81,11 @@ a
   color: $accent
   text-decoration: none
   outline: 0
+  transition: color 220ms ease, opacity 220ms ease
 
 a:hover, a:focus
   color: color.adjust($accent, $lightness: 20%)
+  opacity: 0.82
 
 
 
@@ -101,6 +103,9 @@ img::selection
 
 img::-moz-selection
   background: transparent
+
+img
+  transition: opacity 280ms ease, transform 280ms ease
 
 body
   -webkit-tap-highlight-color: $selectionColor

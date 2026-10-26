@@ -10,6 +10,11 @@
     display: block
     width: 100%
     height: auto
+    transform: scale(1)
+    transition: opacity 280ms ease, transform 280ms ease
+  &:hover .image
+    opacity: 0.9
+    transform: scale(1.02)
   .overlay
     position: absolute
     top: 0
@@ -19,7 +24,7 @@
     height: 100%
     width: 100%
     opacity: 0
-    //transition: .5s ease
+    transition: opacity 280ms ease
     background-color: rgba(255,255,255,0.05)
   .text
     color: black
@@ -31,3 +36,10 @@
     left: 50%
     transform: translate(-50%, -50%)
     -ms-transform: translate(-50%, -50%)
+
+@media (prefers-reduced-motion: reduce)
+  img, .image-container .image, .image-container .overlay
+    transition: none
+
+  .post-container a:hover img, .image-container:hover .image
+    transform: none
