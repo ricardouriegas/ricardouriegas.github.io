@@ -19,7 +19,9 @@ projects:
 
 #-------------------------------
 # Featured Projects Section
+
 featured_projects:
+- {name: 'SQL Interpreter, IDE and Modeler Vanilla and from Scratch', url: 'proj-1'}
 - {name: 'Stone Detection for Beans', url: 'proj-2'}
 - {name: 'Rotating Tree Fruit Detector Model', url: 'proj-3'}
 
