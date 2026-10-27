@@ -514,11 +514,11 @@ fieldset {
     padding: 50px 0 50px;
   }
 }
-section:nth-child(odd) {
+section:not(.projects-section):nth-child(odd) {
   background: var(--section-background);
   padding-bottom: clamp(3rem, 8vw, 6.25rem);
 }
-section:nth-child(odd) h3 {
+section:not(.projects-section):nth-child(odd) h3 {
   color: rgb(84.3555837104%, 68.1013861036%, 36.0757888386%);
 }
 
@@ -621,7 +621,7 @@ footer .footer-wrap .social-media nav a:hover {
   --project-accent: #a85f54;
   --project-accent-soft: rgba(168, 95, 84, 0.22);
   --project-background: #f1ece8;
-  --project-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.72));
+  /* --project-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.72)); */
   --project-text: #25272b;
   background: var(--project-background);
   border-radius: var(--corner-radius);
