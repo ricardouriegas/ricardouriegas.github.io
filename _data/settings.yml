@@ -10,15 +10,18 @@ menu:
 #-------------------------------
 # Projects Section
 
-# Add project URLs here when you want them featured on the home page.
-featured_projects: []
-
 projects:
 - {name: 'SQL Interpreter, IDE and Modeler from Scratch',   url: 'proj-1'}
 - {name: 'Stone Detection for Beans',   url: 'proj-2'}
 - {name: 'Rotating Tree Fruit Detector Model', url: 'proj-3'}
 # - {name: 'Project Four',  url: 'proj-4'}
 # - {name: 'Project Five',  url: 'proj-5'}
+
+#-------------------------------
+# Featured Projects Section
+featured_projects:
+- {name: 'Stone Detection for Beans', url: 'proj-2'}
+- {name: 'Rotating Tree Fruit Detector Model', url: 'proj-3'}
 
 #-------------------------------
 # Contact Section
