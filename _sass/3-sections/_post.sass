@@ -2,10 +2,12 @@
 
 .post-container
   width: 100%
-  max-width: 37.5rem
+  max-width: 68.75rem
   margin: 0 auto 2rem
+  padding: 0 clamp(0.5rem, 2vw, 1.5rem)
   position: relative
   display: block
+  overflow-wrap: anywhere
   h4
     color: var(--heading-text)
     line-height: 1.2
@@ -16,6 +18,17 @@
   img
     max-width: 100%
     height: auto
+  table
+    display: block
+    width: max-content
+    max-width: 100%
+    margin: 0 auto
+    border-collapse: separate
+    border-spacing: 0.35rem 0.2rem
+    overflow-x: auto
+  pre
+    max-width: 100%
+    overflow-x: auto
   a
     &:hover img
       opacity: 0.78
