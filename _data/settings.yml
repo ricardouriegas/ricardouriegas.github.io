@@ -6,6 +6,7 @@ menu:
 - {name: 'Blog',     url: 'blog'}
 - {name: 'About',    url: 'about'}
 - {name: 'Contact',  url: 'contact'}
+- {name: 'CV',       url: 'assets/ATS_CV.pdf', new_tab: true}
 
 #-------------------------------
 # Projects Section
