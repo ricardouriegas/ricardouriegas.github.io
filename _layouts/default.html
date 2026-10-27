@@ -26,6 +26,19 @@
     <script type="text/javascript" async
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+    <script defer>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('pre > code.language-mermaid').forEach(function (code) {
+          var diagram = document.createElement('div');
+          diagram.className = 'mermaid';
+          diagram.textContent = code.textContent;
+          code.parentElement.replaceWith(diagram);
+        });
+
+        mermaid.initialize({ startOnLoad: true });
+      });
+    </script>
     {% include analytics.html %}
     <!-- Use Jekyll SEO plugin -->
     {% seo %}

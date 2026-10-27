@@ -100,6 +100,54 @@ img
 pre, code, blockquote, input, textarea, select, button
   border-radius: var(--corner-radius)
 
+/* Rouge syntax highlighting
+  ------------------------------------	*/
+.highlight
+  background: var(--section-background)
+  color: var(--page-text)
+  padding: 1rem
+  border-radius: var(--corner-radius)
+
+.highlight .c, .highlight .ch, .highlight .cm, .highlight .c1, .highlight .cs
+  color: #708090
+
+.highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt
+  color: #8959a8
+
+.highlight .n, .highlight .na, .highlight .nb, .highlight .nc, .highlight .nd, .highlight .nf, .highlight .nl, .highlight .nn, .highlight .nt, .highlight .nv
+  color: #4271ae
+
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo
+  color: #f5871f
+
+.highlight .o, .highlight .ow
+  color: #3e999f
+
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2
+  color: #718c00
+
+.highlight .p
+  color: inherit
+
+@media (prefers-color-scheme: dark)
+  .highlight .c, .highlight .ch, .highlight .cm, .highlight .c1, .highlight .cs
+    color: #969896
+
+  .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt
+    color: #d7a8e8
+
+  .highlight .n, .highlight .na, .highlight .nb, .highlight .nc, .highlight .nd, .highlight .nf, .highlight .nl, .highlight .nn, .highlight .nt, .highlight .nv
+    color: #9cc4e4
+
+  .highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo
+    color: #fdbc78
+
+  .highlight .o, .highlight .ow
+    color: #8abeb7
+
+  .highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s1, .highlight .s2
+    color: #b5bd68
+
 /* Basic Styles
   ------------------------------------	*/
 body
