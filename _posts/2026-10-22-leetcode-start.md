@@ -16,5 +16,6 @@ I recommend if you will follow this series of posts to study, you should already
 I recommend the following order of the posts to study the patterns:
 1. [Two Pointers Pattern](/two-pointers)
 2. [Fast & Slow Pointers Pattern](/fast-slow-pointers)
-3. to be continued...
+3. [Sliding Window Pattern](/sliding-window)
+4. [Merge Intervals Pattern](/merge-intervals)
 <!-- TODO: Add more patterns as they are created -->
