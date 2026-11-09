@@ -51,14 +51,21 @@
       box-shadow: 0 1.5rem 3.5rem rgba(35, 38, 45, 0.22)
       transform: translateY(-4px)
 
+  .study-card-overview
+    display: block
+    color: inherit
+
+    &:hover
+      color: inherit
+      opacity: 1
+
   .study-card-header
     display: flex
     align-items: center
     justify-content: space-between
     gap: 1rem
     padding: 1.5rem 1.5rem 1.25rem
-    border-bottom: 1px solid var(--muted-border)
-    background: linear-gradient(135deg, var(--section-background), var(--page-background))
+    background: var(--page-background)
 
     .notes-eyebrow
       margin: 0
@@ -72,8 +79,8 @@
     span
       flex-shrink: 0
       padding: 0.35rem 0.65rem
-      border: 1px solid var(--muted-border)
       border-radius: 999px
+      background: var(--page-background)
       color: var(--page-text)
       font-size: 0.75rem
       font-weight: 700
@@ -87,24 +94,11 @@
       font-size: 0.9rem
       line-height: 1.6
 
-  .study-card-link
-    color: $accent-color
-    font-size: 0.85rem
-    font-weight: 700
-
-    span
-      margin-left: 0.25rem
-      transition: margin 180ms ease
-
-    &:hover span
-      margin-left: 0.5rem
-
   .study-path
     margin: 0 1.5rem 1.5rem
-    border-top: 1px solid var(--muted-border)
 
   .study-path-title
-    margin: 1rem 0 0.35rem
+    margin: 0.5rem 0 0.35rem
     color: var(--page-text)
     font-size: 0.75rem
     font-weight: 700
@@ -119,10 +113,6 @@
 
     li
       counter-increment: study-note
-      border-bottom: 1px solid var(--muted-border)
-
-      &:last-child
-        border-bottom: 0
 
       a
         display: flex
@@ -148,8 +138,7 @@
       font-size: 1.1rem
 
   .study-path-empty
-    padding: 1rem 0 0
-    border-top: 1px solid var(--muted-border)
+    padding: 0
     color: var(--page-text)
     font-size: 0.9rem
 

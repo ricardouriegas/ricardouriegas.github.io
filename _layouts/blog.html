@@ -24,17 +24,18 @@ layout: default
           {% assign topic_name = overview.title %}
         {% endif %}
         <article class="study-card">
-          <div class="study-card-header">
-            <div>
-              <p class="notes-eyebrow">Study track</p>
-              <h2>{{ topic_name }}</h2>
+          <a class="study-card-overview" href="{{ site.github.url }}{{ overview.url }}">
+            <div class="study-card-header">
+              <div>
+                <p class="notes-eyebrow">Study track</p>
+                <h2>{{ topic_name }}</h2>
+              </div>
+              <span>{{ topic_posts.size }} {% if topic_posts.size == 1 %}note{% else %}notes{% endif %}</span>
             </div>
-            <span>{{ topic_posts.size }} {% if topic_posts.size == 1 %}note{% else %}notes{% endif %}</span>
-          </div>
-          <div class="study-card-content">
-            <p>{{ overview.excerpt | strip_html | truncate: 220 }}</p>
-            <a class="study-card-link" href="{{ site.github.url }}{{ overview.url }}">Read the overview <span aria-hidden="true">&rarr;</span></a>
-          </div>
+            <div class="study-card-content">
+              <p>{{ overview.excerpt | strip_html | truncate: 220 }}</p>
+            </div>
+          </a>
           {% if topic_posts.size > 1 %}
             <div class="study-path">
               <p class="study-path-title">Notes in this track</p>
