@@ -10,4 +10,4 @@ permalink: /about
 
 Hi, I'm Ricardo Uriegas, a graduated Information Technology Engineer with a strong passion for technology and siking to leave something in the memory of some people who live in this world. I have a strong interest for Machine Learning (sometimes referred as AI), Audio Processing, Software Design and Development.
 
-My goal is to continue growing as a developer, and that means that I'll try to write about some topics I find interesting here in the [blog](https://ricardouriegas.github.io/blog/), and also share some of the projects I worked or am working on in the [projects section](https://ricardouriegas.github.io/projects/).
+My goal is to continue growing as a developer, and that means that I'll try to write about some topics I find interesting in my [study notes](https://ricardouriegas.github.io/notes/), and also share some of the projects I worked or am working on in the [projects section](https://ricardouriegas.github.io/projects/).

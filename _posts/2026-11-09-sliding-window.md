@@ -3,6 +3,7 @@ layout: post
 title: "Sliding Window Pattern"
 categories: 
 - leetcode-patterns
+order: 5
 tags:
 - python
 ---

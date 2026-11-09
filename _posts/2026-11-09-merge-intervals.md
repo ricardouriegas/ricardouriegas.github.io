@@ -3,6 +3,7 @@ layout: post
 title: "Merge Intervals Pattern"
 categories: 
 - leetcode-patterns
+order: 4
 tags:
 - python
 ---

@@ -4,20 +4,55 @@ layout: default
 
 <section>
   <div class="blog-container">
-    {% for post in site.posts %}
-      <div class="blog-unit">
-        <h1><a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a></h1>
-        <span class="blog-date">
-          {% assign d = post.date | date: "%-d"  %}
-          {{ post.date | date: "%B" }}
-          {% case d %}
-            {% when '1' or '21' or '31' %}{{ d }}st
-            {% when '2' or '22' %}{{ d }}nd
-            {% when '3' or '23' %}{{ d }}rd
-            {% else %}{{ d }}th{% endcase %},
-          {{ post.date | date: "%Y" }}
-        </span>
-      </div>
-    {% endfor %}
+    <header class="notes-intro">
+      <p class="notes-eyebrow">Learning in public</p>
+      <h1>Study Notes</h1>
+      <p>
+        A collection of working notes from the things I am studying, building,
+        and trying to understand better. Right now, that means LeetCode
+        patterns and system design.
+      </p>
+    </header>
+
+    <div class="notes-topics">
+      {% for topic in site.data.study %}
+        {% assign topic_posts = site.posts | where_exp: "post", "post.categories contains topic.slug" | sort: "order" %}
+        {% assign overview = topic_posts | first %}
+        <article class="study-card">
+          <div class="study-card-header">
+            <div>
+              <p class="notes-eyebrow">{{ topic.label }}</p>
+              <h2>{{ topic.name }}</h2>
+            </div>
+            <span>{{ topic_posts.size }} {% if topic_posts.size == 1 %}note{% else %}notes{% endif %}</span>
+          </div>
+          <div class="study-card-content">
+            <p>{{ overview.excerpt | strip_html | truncate: 220 }}</p>
+            <a class="study-card-link" href="{{ site.github.url }}{{ overview.url }}">Read the overview <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          {% if topic_posts.size > 1 %}
+            <div class="study-path">
+              <p class="study-path-title">Notes in this track</p>
+              <ol>
+                {% for post in topic_posts offset:1 %}
+                  <li>
+                    <a href="{{ site.github.url }}{{ post.url }}">
+                      <span>{{ post.title }}</span>
+                      <span class="study-path-arrow" aria-hidden="true">&rarr;</span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ol>
+            </div>
+          {% else %}
+            <div class="study-path study-path-empty">More notes are on the way.</div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if site.posts.size == 0 %}
+      <p class="notes-empty">Notes are coming soon.</p>
+    {% endif %}
   </div>
 </section>

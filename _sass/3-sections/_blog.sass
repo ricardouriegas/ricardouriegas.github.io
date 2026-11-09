@@ -1,22 +1,162 @@
 @use '../variables' as *
 
 .blog-container
-  padding-top: 10px
-  margin: clamp(1rem, 4vw, 2rem)
-  .blog-unit
+  max-width: 70rem
+  margin: 0 auto
+  padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 4vw, 2.5rem)
+
+  .notes-intro
+    width: 100%
+    max-width: 52rem
+    margin-bottom: clamp(2.5rem, 6vw, 4rem)
+    padding: 0
+    text-align: left
+
     h1
-      display: inline-block
-      margin-bottom: 5px
-      padding: 0px
-      font:
-        size: clamp(1.25rem, 3vw, 1.5rem)
-        weight: 700
+      width: 100%
+      margin: 0 0 1rem
+      font-size: clamp(2.5rem, 7vw, 4.25rem)
+      text-align: left
+
+    p:not(.notes-eyebrow)
+      max-width: 38rem
+      margin: 0
+      font-size: clamp(1rem, 2vw, 1.2rem)
+      line-height: 1.7
+
+  .notes-eyebrow
+    margin: 0 0 0.6rem
+    color: $accent-color
+    font-size: 0.75rem
+    font-weight: 700
+    letter-spacing: 0.12em
+    text-transform: uppercase
+
+  .notes-topics
+    display: grid
+    grid-template-columns: repeat(2, minmax(0, 1fr))
+    align-items: start
+    gap: clamp(1rem, 3vw, 1.5rem)
+
+  .study-card
+    overflow: hidden
+    border: 2px solid var(--muted-border)
+    border-radius: calc(var(--corner-radius) * 1.25)
+    background: var(--page-background)
+    box-shadow: 0 1.25rem 3rem rgba(35, 38, 45, 0.16)
+    transition: border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease
+
+    &:hover
+      border-color: $accent-color
+      box-shadow: 0 1.5rem 3.5rem rgba(35, 38, 45, 0.22)
+      transform: translateY(-4px)
+
+  .study-card-header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 1rem
+    padding: 1.5rem 1.5rem 1.25rem
+    border-bottom: 1px solid var(--muted-border)
+    background: linear-gradient(135deg, var(--section-background), var(--page-background))
+
+    .notes-eyebrow
+      margin: 0
+
+    h2
+      margin: 0.35rem 0 0
+      color: var(--heading-text)
+      font-size: clamp(1.45rem, 3vw, 1.9rem)
+      line-height: 1.15
+
+    span
+      flex-shrink: 0
+      padding: 0.35rem 0.65rem
+      border: 1px solid var(--muted-border)
+      border-radius: 999px
+      color: var(--page-text)
+      font-size: 0.75rem
+      font-weight: 700
+
+  .study-card-content
+    padding: 1.35rem 1.5rem 1.5rem
+
+    p
+      margin: 0 0 1rem
+      color: var(--page-text)
+      font-size: 0.9rem
+      line-height: 1.6
+
+  .study-card-link
+    color: $accent-color
+    font-size: 0.85rem
+    font-weight: 700
+
+    span
+      margin-left: 0.25rem
+      transition: margin 180ms ease
+
+    &:hover span
+      margin-left: 0.5rem
+
+  .study-path
+    margin: 0 1.5rem 1.5rem
+    border-top: 1px solid var(--muted-border)
+
+  .study-path-title
+    margin: 1rem 0 0.35rem
+    color: var(--page-text)
+    font-size: 0.75rem
+    font-weight: 700
+    letter-spacing: 0.1em
+    text-transform: uppercase
+
+  .study-path ol
+    margin: 0
+    padding: 0
+    list-style: none
+    counter-reset: study-note
+
+    li
+      counter-increment: study-note
+      border-bottom: 1px solid var(--muted-border)
+
+      &:last-child
+        border-bottom: 0
+
       a
+        display: flex
+        align-items: center
+        gap: 0.75rem
+        padding: 0.8rem 0
         color: var(--heading-text)
-      &:hover a
-        color: $accent-color
-    .blog-date
-      display: block
-      font:
-        size: 14px
-        weight: 700
+        font-size: 0.95rem
+        font-weight: 700
+
+        &::before
+          content: counter(study-note, decimal-leading-zero)
+          min-width: 1.5rem
+          color: $accent-color
+          font-size: 0.75rem
+
+        &:hover
+          color: $accent-color
+
+    .study-path-arrow
+      margin-left: auto
+      color: $accent-color
+      font-size: 1.1rem
+
+  .study-path-empty
+    padding: 1rem 0 0
+    border-top: 1px solid var(--muted-border)
+    color: var(--page-text)
+    font-size: 0.9rem
+
+  .notes-empty
+    color: var(--page-text)
+
+@media (max-width: 800px)
+  .blog-container
+    .notes-topics
+      grid-template-columns: 1fr

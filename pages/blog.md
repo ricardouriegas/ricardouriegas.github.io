@@ -1,5 +1,5 @@
 ---
 layout: blog
-title: Blog
-permalink: /blog
+title: Study Notes
+permalink: /notes
 ---

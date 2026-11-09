@@ -3,6 +3,7 @@ layout: post
 title: "Leetcode Patterns"
 categories: 
 - leetcode-patterns
+order: 0
 tags:
 - python
 ---
