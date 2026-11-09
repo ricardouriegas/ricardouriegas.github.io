@@ -9,20 +9,25 @@ layout: default
       <h1>Study Notes</h1>
       <p>
         A collection of working notes from the things I am studying, building,
-        and trying to understand better. Right now, that means LeetCode
-        patterns and system design.
+        and trying to understand better.
       </p>
     </header>
 
+    {% assign categories = site.notes | map: "categories" | join: "," | split: "," | uniq %}
     <div class="notes-topics">
-      {% for topic in site.data.study %}
-        {% assign topic_posts = site.notes | where_exp: "post", "post.categories contains topic.slug" | sort: "order" %}
+      {% for category in categories %}
+        {% if category != "" %}
+        {% assign topic_posts = site.notes | where_exp: "post", "post.categories contains category" | sort: "order" %}
         {% assign overview = topic_posts | first %}
+        {% assign topic_name = category | replace: "-", " " | capitalize %}
+        {% if overview.title %}
+          {% assign topic_name = overview.title %}
+        {% endif %}
         <article class="study-card">
           <div class="study-card-header">
             <div>
-              <p class="notes-eyebrow">{{ topic.label }}</p>
-              <h2>{{ topic.name }}</h2>
+              <p class="notes-eyebrow">Study track</p>
+              <h2>{{ topic_name }}</h2>
             </div>
             <span>{{ topic_posts.size }} {% if topic_posts.size == 1 %}note{% else %}notes{% endif %}</span>
           </div>
@@ -48,6 +53,7 @@ layout: default
             <div class="study-path study-path-empty">More notes are on the way.</div>
           {% endif %}
         </article>
+        {% endif %}
       {% endfor %}
     </div>
 

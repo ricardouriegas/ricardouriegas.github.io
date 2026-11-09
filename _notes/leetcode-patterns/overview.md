@@ -16,9 +16,9 @@ You will also sometimes find at the end of each problem a mistake list of things
 I recommend if you will follow this series of posts to study, you should already have basic knowledge of Python and DSA. Each post will have 2-3 problems per pattern, that means that if you cant solve the first one, look the solution, study it, write your own solution without copying it, and try the following problem for the pattern. 
 
 I recommend the following order of the posts to study the patterns:
-1. [Two Pointers Pattern](/two-pointers)
-2. [Island Pattern](/islands)
-3. [Fast & Slow Pointers Pattern](/fast-slow-pointers)
-4. [Sliding Window Pattern](/sliding-window)
-5. [Merge Intervals Pattern](/merge-intervals)
-<!-- TODO: Add more patterns as they are created -->
+
+<!-- For loop that write over all pattern notes based on order value -->
+{% assign pattern_notes = site.notes | where_exp: "note", "note.categories contains 'leetcode-patterns'" | sort: "order" %}
+{% for note in pattern_notes offset:1 %}
+{{ forloop.index }}. [{{ note.title }}]({{ site.github.url }}{{ note.url }})
+{% endfor %}
