@@ -4,8 +4,7 @@
 menu:
 - {name: 'Projects', url: 'projects'}
 - {name: 'Study Notes', url: 'notes'}
-- {name: 'About',    url: 'about'}
-- {name: 'Contact',  url: 'contact'}
+- {name: 'About Me', url: 'about'}
 - {name: 'CV',       url: 'assets/ATS_CV.pdf', new_tab: true}
 
 #-------------------------------
@@ -27,7 +26,7 @@ featured_projects:
 - {name: 'Rotating Tree Fruit Detector Model', url: 'proj-3'}
 
 #-------------------------------
-# Contact Section
+# Social Links
 
 social:
 # 
