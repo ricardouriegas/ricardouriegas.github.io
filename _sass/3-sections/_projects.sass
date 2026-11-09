@@ -16,8 +16,9 @@
     --project-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.72))
     --project-text: #25272b
     background: var(--project-background)
+    border: 2px solid transparent
     border-radius: var(--corner-radius)
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+    box-shadow: none
     cursor: pointer
     display: block
     width: 100%
@@ -28,7 +29,7 @@
     position: relative
     overflow: hidden
     isolation: isolate
-    transition: box-shadow 300ms ease, transform 300ms ease
+    transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease
     &::before
       background: radial-gradient(circle at 20% 20%, var(--project-accent-soft), transparent 34%), radial-gradient(circle at 80% 75%, rgba(255, 255, 255, 0.32), transparent 30%), linear-gradient(135deg, transparent 48%, rgba(255, 255, 255, 0.3) 49%, transparent 50%)
       background-size: auto, auto, 28px 28px
@@ -48,7 +49,6 @@
       top: 18%
       width: 42%
       z-index: -1
-      animation: project-glow 8s ease-in-out infinite alternate
     &.project-unit-2
       --project-accent: #4b817b
       --project-accent-soft: rgba(75, 129, 123, 0.22)
@@ -73,6 +73,7 @@
           size: clamp(1.125rem, 3vw, 1.5rem)
           weight: 300
     &:hover
+      border-color: var(--project-accent)
       box-shadow: 0 10px 24px rgba(0,0,0,0.28)
       transform: translateY(-4px)
 
@@ -102,12 +103,6 @@
     transform: translate3d(-4%, -2%, 0) rotate(-2deg)
   100%
     transform: translate3d(4%, 2%, 0) rotate(2deg)
-
-@keyframes project-glow
-  0%
-    transform: translate3d(-8%, 4%, 0) scale(0.9)
-  100%
-    transform: translate3d(35%, -8%, 0) scale(1.2)
 
 @media (prefers-reduced-motion: reduce)
   .project-container .project-unit
