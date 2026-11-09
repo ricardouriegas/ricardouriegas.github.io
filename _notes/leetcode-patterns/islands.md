@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Island Pattern"
+permalink: /islands
 categories: 
 - leetcode-patterns
 order: 2
@@ -11,4 +12,3 @@ tags:
 ---
 
 The island pattern is a common technique used in solving graph and grid problems. It involves exploring connected components in a grid, typically using either **Depth-First Search (DFS)** or **Breadth-First Search (BFS)**. This pattern is particularly useful for problems that require _identifying or counting connected_ regions in a **2D grid**.
-

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Leetcode Patterns"
+permalink: /leetcode-start
 categories: 
 - leetcode-patterns
 order: 0

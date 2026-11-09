@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Fast & Slow Pointers Pattern"
+permalink: /fast-slow-pointers
 categories: 
 - leetcode-patterns
 order: 3

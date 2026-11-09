@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Sliding Window Pattern"
+permalink: /sliding-window
 categories: 
 - leetcode-patterns
 order: 5

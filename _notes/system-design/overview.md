@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "System Design"
+permalink: /system-design-start
 categories: 
 - system-design
 order: 0

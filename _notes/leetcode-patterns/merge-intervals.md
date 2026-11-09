@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Merge Intervals Pattern"
+permalink: /merge-intervals
 categories: 
 - leetcode-patterns
 order: 4

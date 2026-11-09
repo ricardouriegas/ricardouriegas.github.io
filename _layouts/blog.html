@@ -16,7 +16,7 @@ layout: default
 
     <div class="notes-topics">
       {% for topic in site.data.study %}
-        {% assign topic_posts = site.posts | where_exp: "post", "post.categories contains topic.slug" | sort: "order" %}
+        {% assign topic_posts = site.notes | where_exp: "post", "post.categories contains topic.slug" | sort: "order" %}
         {% assign overview = topic_posts | first %}
         <article class="study-card">
           <div class="study-card-header">
@@ -51,7 +51,7 @@ layout: default
       {% endfor %}
     </div>
 
-    {% if site.posts.size == 0 %}
+    {% if site.notes.size == 0 %}
       <p class="notes-empty">Notes are coming soon.</p>
     {% endif %}
   </div>

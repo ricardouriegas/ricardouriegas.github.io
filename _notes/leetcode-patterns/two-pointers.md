@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Two Pointers Pattern"
+permalink: /two-pointers
 categories: 
 - leetcode-patterns
 order: 1

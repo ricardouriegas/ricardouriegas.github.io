@@ -4,6 +4,9 @@ port: 4000
 markdown:  kramdown
 permalink: /:title
 plugins:   [jekyll-sitemap, jekyll-feed,  jekyll-seo-tag]
+collections:
+  notes:
+    output: true
 exclude:
   - assets/css/all.sass
 
